@@ -33,6 +33,6 @@ class analogSensor(object):
         self.aSensorPin = aPin
 
     def ASoneValue(self):
-        aSensorValue = ADC.read(aSensorPin)
+        aSensorValue = ADC.read(self.aSensorPin)
 
         return aSensorValue

@@ -13,8 +13,13 @@ with open('sensors.csv', 'ab') as myfile:
     htSensor = sensors.HumidTempData('P8_11')
     celcius, farenheight, humidity = htSensor.HTvalues()
 
+    #get moisture sensor data
+    moistSensor = sensors.analogSensor('P9_33')
+    moistValue = moistSensor.ASoneValue()
+
+
     #write date and sensor data to the csv file
-    wr.writerow([today, celcius, farenheight, humidity])
+    wr.writerow([today, celcius, farenheight, humidity, moistValue])
 
 #print '%.4f'%(humidity)
 #print '%.2f*C %.2f*F'%(celcius, farenheight)
