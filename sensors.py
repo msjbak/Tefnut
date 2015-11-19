@@ -1,4 +1,6 @@
 import Adafruit_DHT
+import Adafruit_BBIO.ADC as ADC
+
 
 class HumidTempData(object):
 
@@ -21,5 +23,16 @@ class HumidTempData(object):
 	else:
             humidity = 'not found'
 
-
         return temperatureC, temperatureF, humidity
+
+class analogSensor(object):
+
+    ADC.setup()
+
+    def __init__(self, aPin):
+        self.aSensorPin = aPin
+
+    def ASoneValue(self):
+        aSensorValue = ADC.read(aSensorPin)
+
+        return aSensorValue
