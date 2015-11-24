@@ -1,3 +1,5 @@
+#!/user/bin/python
+
 import sensors 
 from datetime import datetime
 import csv
