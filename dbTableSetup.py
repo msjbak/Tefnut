@@ -3,11 +3,11 @@
 import sqlite3
 
 conn = sqlite3.connect('sensorData.db')
-print "Opened database successfully";
+print "Opened database successfully"
 
 conn.execute('''CREATE TABLE PlantValues
-	(sensorID VARCHAR(30) PRIMARY KEY NOT NULL,
-       	dateTimeStamp TIMESTAMP PRIMARY KEY NOT NULL,
+	(sensorID VARCHAR(30) NOT NULL,
+       	dateTimeStamp TIMESTAMP NOT NULL,
        	recordLength INT,
        	onTime INT,
        	airHumidity FLOAT,
@@ -16,6 +16,6 @@ conn.execute('''CREATE TABLE PlantValues
 	soilMoisture FLOAT,
 	light FLOAT,
        	state VARCHAR(30));''')
-print "Table created successfully";
+print "Table created successfully"
 
 conn.close()
