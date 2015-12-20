@@ -23,7 +23,8 @@ moistValue = moistSensor.ASoneValue()
 conn = sqlite3.connect('sensorData.db')
 
 #write date and sensor data to the sData table in the sensors database
-conn.execute("INSERT INTO PlantValues VALUES(sensorID('System01'), dateTimeStamp(today), airHumidity(humidity), airTemp(farenheight), soilMoisture(moistValue))"
+#conn.execute("INSERT INTO PlantValues VALUES(sensorID('System01'), dateTimeStamp(today), airHumidity(humidity), airTemp(farenheight), soilMoisture(moistValue));")
+conn.execute("INSERT INTO PlantValues(sensorID, dateTimeStamp, airHumidity, airTemp, soilMoisture) VALUES (?,?,?,?,?)", ['System01', today, humidity, farenheight, moistValue]) 
 
 #commit changes to the database
 conn.commit()
