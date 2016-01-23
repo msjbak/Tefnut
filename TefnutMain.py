@@ -20,7 +20,7 @@ moistValue = moistSensor.ASoneValue()
 
 
 #connect to the sensor data database
-conn = sqlite3.connect('/root/Tefnut/sensorData.db')
+conn = sqlite3.connect('/root/sensorData2.db')
 
 #write date and sensor data to the sData table in the sensors database
 #conn.execute("INSERT INTO PlantValues VALUES(sensorID('System01'), dateTimeStamp(today), airHumidity(humidity), airTemp(farenheight), soilMoisture(moistValue));")
@@ -37,3 +37,6 @@ with open('valsInDB.csv', 'ab') as myfile:
 
     #write date and sensor data to the csv file
     wr.writerow([today, humidity, farenheight, moistValue])
+
+#write to the plotly graph
+
